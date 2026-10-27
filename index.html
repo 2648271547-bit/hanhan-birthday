@@ -464,12 +464,12 @@ function buildCakeTargets(n) {
   /* 下层顶面（被上层压着，只露一圈） */
   for (let i = 0, m = n * 0.10; i < m; i++) {
     const a = rand(0, TAU), rr = Math.sqrt(rand(0.62 * 0.62, 0.99));
-    add(Math.cos(a) * rr, A.y1 + rand(-0.004, 0.004), Math.sin(a) * rr, pick([0, 1, 1]), 1.02);
+    add(Math.cos(a) * rr, A.y1 + rand(-0.004, 0.004), Math.sin(a) * rr, pick([0, 1, 1]), 1.14);
   }
   /* 下层内芯：让体积看起来是实的，不是一层壳 */
   for (let i = 0, m = n * 0.06; i < m; i++) {
     const a = rand(0, TAU), rr = Math.sqrt(Math.random()) * A.r * 0.92;
-    add(Math.cos(a) * rr, rand(A.y0 + 0.03, A.y1 - 0.02), Math.sin(a) * rr, pick([1, 2, 3]), 0.76);
+    add(Math.cos(a) * rr, rand(A.y0 + 0.03, A.y1 - 0.02), Math.sin(a) * rr, pick([1, 2, 3]), 0.88);
   }
   /* 下层奶油环：三排 + 波浪垂坠，最亮的一圈 */
   for (let j = 0; j < 3; j++) {
@@ -480,7 +480,7 @@ function buildCakeTargets(n) {
       const drip = Math.pow(Math.random(), 2.2) * (0.045 + j * 0.05);
       const r = A.r * (1.004 + j * 0.005) + 0.004 * Math.sin(a * 9);
       add(Math.cos(a) * r, A.y1 + wave - drip, Math.sin(a) * r,
-        j === 0 ? pick([6, 6, 6, 0, 0, 1]) : pick([0, 1, 6]), 1.62 - j * 0.22, j === 0 ? 0 : 1);
+        j === 0 ? pick([6, 6, 6, 0, 0, 1]) : pick([0, 1, 6]), 1.34 - j * 0.18, j === 0 ? 0 : 1);
     }
   }
   /* 上层侧壁 */
@@ -498,7 +498,7 @@ function buildCakeTargets(n) {
   /* 上层内芯 */
   for (let i = 0, m = n * 0.05; i < m; i++) {
     const a = rand(0, TAU), rr = Math.sqrt(Math.random()) * B.r * 0.9;
-    add(Math.cos(a) * rr, rand(B.y0 + 0.03, B.y1 - 0.02), Math.sin(a) * rr, pick([1, 2, 3]), 0.74);
+    add(Math.cos(a) * rr, rand(B.y0 + 0.03, B.y1 - 0.02), Math.sin(a) * rr, pick([1, 2, 3]), 0.86);
   }
   /* 上层奶油环 */
   for (let j = 0; j < 3; j++) {
@@ -509,7 +509,7 @@ function buildCakeTargets(n) {
       const drip = Math.pow(Math.random(), 2.2) * (0.04 + j * 0.045);
       const r = B.r * (1.006 + j * 0.006) + 0.004 * Math.sin(a * 10);
       add(Math.cos(a) * r, B.y1 + wave - drip, Math.sin(a) * r,
-        j === 0 ? pick([6, 6, 6, 0, 0, 1]) : pick([0, 1, 6]), 1.58 - j * 0.22, j === 0 ? 0 : 1);
+        j === 0 ? pick([6, 6, 6, 0, 0, 1]) : pick([0, 1, 6]), 1.30 - j * 0.18, j === 0 ? 0 : 1);
     }
   }
   /* 蜡烛 */
